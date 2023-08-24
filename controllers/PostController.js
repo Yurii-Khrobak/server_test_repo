@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const PostService = require('../services/PostService.js')
-const { secret } = require('../config.js')
 
 const getAuthorId = req => {
 	const token = req.headers.authorization.split(' ')[1]
-	const decodeData = jwt.verify(token, secret)
+	const decodeData = jwt.verify(token, process.env.SECRET)
 	return decodeData.id
 }
 

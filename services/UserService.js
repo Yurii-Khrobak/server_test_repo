@@ -1,12 +1,12 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 
 const User = require('../models/User.js')
-const { secret } = require('../config.js')
 
 const generateAccesToken = id => {
 	const payload = { id }
-	return jwt.sign(payload, secret, { expiresIn: '24h' })
+	return jwt.sign(payload, process.env.SECRET, { expiresIn: '24h' })
 }
 
 class UserService {

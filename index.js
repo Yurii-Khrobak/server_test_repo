@@ -4,8 +4,6 @@ const cors = require('cors')
 const fileUpload = require('express-fileupload')
 require('dotenv').config()
 
-const { url } = require('./config.js')
-
 const postRouter = require('./routers/postRouter.js')
 const userRouter = require('./routers/userRouter.js')
 
