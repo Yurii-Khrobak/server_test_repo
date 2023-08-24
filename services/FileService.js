@@ -5,7 +5,7 @@ class FileService {
 	saveFile(file) {
 		try {
 			const fileName = uuid.v4() + '.jpg'
-			const filePath = path.join(process.cwd(), fileName)
+			const filePath = path.join('/tmp', fileName)
 			file.mv(filePath)
 			return fileName
 		} catch (e) {
